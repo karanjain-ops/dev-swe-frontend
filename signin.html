@@ -64,19 +64,19 @@
     <div class="contain">
       <div class="forms-contain">
         <div id="su" class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form class="sign-in-form" onsubmit="return false">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="text" placeholder="Email" />
+              <input type="text" placeholder="Email" id="simail" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" id="sipassword"/>
             </div>
-            <input type="submit" value="Login" class="btn-l solid" />
+            <input type="submit" value="Login" class="btn-l solid" onclick="signIn()"/>
           </form>
-          <form action="#" class="sign-up-form">
+          <form class="sign-up-form" onsubmit="return false">
             <h2 class="title">Sign up</h2>
             <div class="input-field" hidden id="nm">
               <i class="fas fa-user"></i>
@@ -84,7 +84,7 @@
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" id="sumail" placeholder="Email" />
             </div>
             <div class="input-field" hidden id="ph">
               <i class="bi bi-telephone-fill"></i>
@@ -104,9 +104,9 @@
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" id="supassword" placeholder="Password" />
             </div>
-            <input type="submit" class="btn-l" value="Sign up" data-toggle="modal" data-target="#emergencyContact" onclick="getMoreDetails()"/>
+            <input type="submit" class="btn-l" value="Sign up" onclick="getMoreDetails()"/>
           </form>
         </div>
       </div>
@@ -248,7 +248,9 @@
   <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+  <script src="./app.js"></script>
 </body>
 
 </html>

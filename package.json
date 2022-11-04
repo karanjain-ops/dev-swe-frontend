@@ -1,0 +1,23 @@
+{
+  "name": "sahayata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karanjain-ops/dev-swe-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karanjain-ops/dev-swe-frontend/issues"
+  },
+  "homepage": "https://github.com/karanjain-ops/dev-swe-frontend#readme",
+  "devDependencies": {
+    "firebase": "^9.10.0"
+  }
+}

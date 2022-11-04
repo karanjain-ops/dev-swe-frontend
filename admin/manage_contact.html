@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <title>Admin Page</title>
+    <link rel = "icon" href ="/assets/img/favicon-1-t.png">
+    
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="body-pd" style="background: #80808045;">
+<header class="header" id="header">
+    <div class="header__toggle">
+        <i class='bx bx-menu' id="header-toggle"></i>
+    </div>
+</header>
+
+<div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+        <div>
+            <a href="index.html" class="nav__logo">
+                <i class='bx bx-layer nav__logo-icon'></i>
+                <span class="nav__logo-name">Sahayata</span>
+            </a>
+            <div class="nav__list">
+                <a href="index.html" class="nav__link nav-home">
+                  <i class='bx bx-grid-alt nav__icon' ></i>
+                  <span class="nav__name">Home</span>
+                </a>
+                <a href="manage_emergency.html" class="nav-orderManage nav__link ">
+                  <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
+                  <span class="nav__name">Emergencies</span>
+                </a>
+                <a href="#" class="nav__link nav-contactManage">
+                  <i class="fas fa-hands-helping"></i>
+                  <span class="nav__name">Contact Info</span>
+                </a>
+                <a href="manage_users.html" class="nav__link nav-userManage">
+                  <i class='bx bx-user nav__icon' ></i>
+                  <span class="nav__name">Users</span>
+                </a>
+            </div>
+        </div>
+        <a href="" class="nav__link">
+          <i class='bx bx-log-out nav__icon' ></i>
+          <span class="nav__name">Log Out</span>
+        </a>
+    </nav>
+</div>  
+<div class="alert alert-info alert-dismissible fade show" role="alert" style="width:100%" id='notempty'>
+    <strong>Info!</strong> If problem is not related to the response then emergency id = 0	
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span></button>
+</div>
+<style>
+    .btn-danger-gradiant {
+        background: linear-gradient(to right, #ff4d7e 0%, #ff6a5b 100%);
+    }
+
+    .btn-danger-gradiant:hover {
+        background: linear-gradient(to right, #ff6a5b 0%, #ff4d7e 100%);
+    }
+</style>
+<div style="margin-right: 32px;display: table;margin-left: auto;">
+<button type="button" class="btn btn-danger-gradiant text-white border-0 py-2 px-3 mx-2" data-toggle="modal" data-target="#history"><span> HISTORY <i class="ti-arrow-right"></i></span></button>
+</div>
+<div class="container-fluid" id='empty'>	
+	<div class="row">
+		<div class="card col-lg-12">
+			<div class="card-body">
+				<table class="table-striped table-bordered col-md-12 text-center">
+                    <thead style="background-color: rgb(111 202 203);">
+                        <tr>
+                            <th>Id</th>
+                            <th>UserId</th>
+                            <th>Email</th>
+                            <th>Phone No</th>
+                            <th>Emergency Id</th>
+                            <th>Message</th>
+                            <th>Datetime</th>
+                            <th>Reply</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>jkaran.2349@gmail.com</td>
+                                        <td>1234567890</td>
+                                        <td>123</td>
+                                        <td>Emergency not responded to.</td>
+                                        <td>10:20:00</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#reply">Reply</button>
+                                        </td>
+                                    </tr>
+                    </tbody>
+		        </table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+    <!-- Reply Modal -->
+    <div class="modal fade" id="reply" tabindex="-1" role="dialog" aria-labelledby="reply" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: rgb(111 202 203);">
+            <h5 class="modal-title" id="reply">Reply (Contact Id: 1)</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="partials/_contactManage.php" method="post">
+                <div class="text-left my-2">
+                    <b><label for="message">Message: </label></b>
+                    <textarea class="form-control" id="message" name="message" rows="2" required minlength="5"></textarea>
+                </div>
+                <input type="hidden" id="contactId" name="contactId" value="1">
+                <input type="hidden" id="userId" name="userId" value="1">
+                <button type="submit" class="btn btn-success" name="contactReply">Reply</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- history Modal -->
+    <div class="modal fade" id="history" tabindex="-1" role="dialog" aria-labelledby="history" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: rgb(187 188 189);">
+              <h5 class="modal-title" id="history">Your Sent Message</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="notReply">
+            <table class="table-striped table-bordered col-md-12 text-center">
+                <thead style="background-color: rgb(111 202 203);">
+                    <tr>
+                        <th>Contact Id</th>
+                        <th>Reply Message</th>
+                        <th>datetime</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                                <td>1</td>
+                                <td>Hellow</td>
+                                <td>12:10:00</td>
+                              </tr>
+                </tbody>
+		    </table>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>         
+            <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+            <script src="main.js"></script>
+    </body>
+</html>

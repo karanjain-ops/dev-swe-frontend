@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sahayata</title>
+
+  <link href="assets/img/favicon-1-t.png" rel="icon">
+  <link href="assets/img/apple-touch-icon-1.png" rel="apple-touch-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a
+            href="mailto:contact@example.com">emergency@help.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:911">911</a></i>
+      </div>
+    </div>
+  </section>
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1>Sahayata<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="signin.html#header">Sign In</a></li>
+          <li class="dropdown" hidden><a href="#"><span>Username</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#" data-toggle="modal" data-target="#profilemodal">Profile</a></li>
+              <li><a href="emergency_list.html">My Emergencies</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    </div>
+  </header>
+  <section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-5" data-aos="fade-in">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <h2>Welcome to <span>Sahayata</span><span style="color:#f85a40;">.</span></h2>
+          <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque
+            eum quaerat.</p>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="#about" class="btn-get-started">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="assets/img/hero-img-1.png" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+        </div>
+      </div>
+    </div>
+
+    <div id="services" class="icon-boxes position-relative">
+      <div class="container position-relative">
+        <div class="row gy-4 mt-5">
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-fire"></i></div>
+              <h4 class="title"><a href="" class="stretched-link" data-toggle="modal" data-target="#locmodal">Fire</a>
+              </h4>
+            </div>
+          </div>
+          <div class="modal fade" id="locmodal" tabindex="-1" role="dialog" aria-labelledby="locmodal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(111 202 203);">
+                  <h5 class="modal-title" id="newUser">Register Emergency</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4>Is the emergency at your saved location?</h4>
+                  <br>
+                  <input type="submit" value="Yes" class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                    data-target="#s2tmodal">
+                  <input type="submit" value="No" class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                    data-target="#currloc">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="currloc" tabindex="-1" role="dialog" aria-labelledby="fireModal2"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(111 202 203);">
+                  <h5 class="modal-title" id="newUser">Register Emergency</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4>Give access to your current location:</h4>
+                  <button class="btn btn-success" onclick="getlocation();"> Show Position</button><br><br>
+                  <div id="currloc_div" style="display: none;">
+                    <div id="currloc1" style="width: 100%; height: 400px;"></div><br>
+                    <input type="submit" value="Submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                      data-target="#s2tmodal" id="currloc2">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="finalmodal" tabindex="-1" role="dialog" aria-labelledby="finalmodal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(111 202 203);">
+                  <h5 class="modal-title" id="newUser">Register Emergency</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4>Emergency Registered.</h4>
+                  <br>
+                  <input type="submit" value="OK" class="btn btn-success" data-dismiss="modal">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-heart-pulse"></i></div>
+              <h4 class="title"><a href="" class="stretched-link" data-toggle="modal"
+                  data-target="#healthModal1">Health</a></h4>
+            </div>
+          </div>
+          <div class="modal fade" id="healthModal1" tabindex="-1" role="dialog" aria-labelledby="healthModal1"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(111 202 203);">
+                  <h5 class="modal-title" id="newUser">Register Health Emergency</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4>Is the person breathing?</h4>
+                  <br>
+                  <input type="submit" value="Yes" class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                    data-target="#healthModal2">
+                  <input type="submit" value="No" class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                    data-target="#healthModal3">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="healthModal2" tabindex="-1" role="dialog" aria-labelledby="healthModal2"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(111 202 203);">
+                  <h5 class="modal-title" id="newUser">Register Health Emergency</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4>Type of Medical Emergency</h4>
+                  <br>
+                  <form action="#">
+                    <div class="serviceform">
+                      <select name="Type of Medical Emergency" id="Type of Medical Emergency" class="form-control"
+                        required>
+                        <option value="" disabled selected>Medical Emergency</option>
+                        <option value="Traumatic Injury">Traumatic Injury</option>
+                        <option value="Cardiac Event">Cardiac Event</option>
+                        <option value="Stroke">Stroke</option>
+                        <option value="Choking">Choking</option>
+                        <option value="Brain Injury">Brain Injury</option>
+                        <option value="Animal Attack">Animal Attack</option>
+                        <option value="Seziure">Seziure</option>
+                        <option value="Allegric Reaction">Allegric Reaction</option>
+                        <option value="Other">Other</option>
+                      </select><br>
+
+                      <input type="submit" value="Submit" class="btn btn-success" data-dismiss="modal"
+                        data-toggle="modal" data-target="#locmodal">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="healthModal3" tabindex="-1" role="dialog" aria-labelledby="healthModal1"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(111 202 203);">
+                  <h5 class="modal-title" id="newUser">Register Health Emergency</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4>CPR Instructions (Cardiopulmonary resuscitation)</h4>
+                  <img src="img/CPR.png" width="100%">
+                  <br><br>
+                  <h4>Is the person breathing?</h4>
+                  <input type="submit" value="Yes" class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                    data-target="#healthModal2">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-shield-exclamation"></i></div>
+              <h4 class="title"><a href="" class="stretched-link" data-toggle="modal"
+                  data-target="#policeModal1">Police</a></h4>
+            </div>
+          </div>
+          <div class="modal fade" id="policeModal1" tabindex="-1" role="dialog" aria-labelledby="healthModal2"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(111 202 203);">
+                  <h5 class="modal-title" id="newUser">Register Police Complaint</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4>Type of Complaint</h4>
+                  <br>
+                  <form action="#">
+                    <div class="serviceform">
+                      <select name="Type of Crime" id="Type of Crime" class="form-control" required>
+                        <option value="" disabled selected>Complaint</option>
+                        <option value="Robbery/Theft">Robbery/Theft</option>
+                        <option value="Physical Abuse">Physical Abuse</option>
+                        <option value="Murder">Murder</option>
+                        <option value="Sexual Assualt">Sexual Assualt</option>
+                        <option value="Kidnapping">Kidnapping</option>
+                        <option value="Drugs Sale">Drugs Sale</option>
+                        <option value="DUI">DUI</option>
+                        <option value="Trespassing">Trespassing</option>
+                        <option value="Other">Other</option>
+                      </select><br>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <h4>Victim's Name:</h4>
+                          <input type="text" class="form-control" id="victimName" name="victimName" required>
+                        </div>
+                        <br>
+                        <div class="form-group col-md-6">
+                          <h4>Victims Age:</h4>
+                          <input class="form-control col-md-3" id="victimAge" name="victimAge" type="number" min="0"
+                            required>
+                        </div><br>
+                      </div>
+                      <input type="submit" value="Submit" class="btn btn-success" data-dismiss="modal"
+                        data-toggle="modal" data-target="#locmodal">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-command"></i></div>
+              <h4 class="title"><a href="" data-toggle="modal" data-target="#sosmodal" class="stretched-link">SOS</a>
+              </h4>
+            </div>
+          </div>
+          <div class="modal fade" id="sosmodal" tabindex="-1" role="dialog" aria-labelledby="sosmodal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(111 202 203);">
+                  <h5 class="modal-title" id="newUser">SOS Registered</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4>Responding to your current location.</h4>
+                  <br>
+                  <input type="submit" value="OK" class="btn btn-success" data-dismiss="modal">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="s2tmodal" tabindex="-1" role="dialog" aria-labelledby="s2tmodal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(111 202 203);">
+                  <h5 class="modal-title" id="newUser">Emergency Registeration</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4>Additional Details (Optional)</h4>
+                  <br>
+                  <center><button class="close" style="float: none;" onClick="GetSpeech()"><i class="bi bi-mic-fill"
+                        style="font-size: 50px;"></i> </button></center>
+                  <br>
+                  <div id="s2tdiv" style="display: none;">
+                    <br>
+                    <input type="text" id="s2t" style="width: 100%;" disabled></label><br><br>
+                    <textarea id="s2ta" style="width: 100%; height: 200px;" placeholder=""></textarea>
+                  </div>
+                  <br>
+                  <input type="submit" value="Submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal"
+                    data-target="#finalmodal">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+  <main id="main">
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>About Us</h2>
+          <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis
+            omnis tiledo stran delop</p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-12">
+            <div class="content ps-0 ps-lg-11">
+              <p class="fst-italic">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua.
+              </p>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </li>
+                <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.
+                </li>
+                <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat
+                  nulla pariatur.</li>
+              </ul>
+              <p>
+                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem
+            dolore earum</p>
+        </div>
+
+        <div class="row gx-lg-0 gy-4">
+
+          <div class="col-lg-4">
+
+            <div class="info-container d-flex flex-column align-items-center justify-content-center">
+              <div class="info-item d-flex">
+                <a href="https://goo.gl/maps/toiKbjZCvL4xXUVr9" target="_blank"><i
+                    class="bi bi-geo-alt flex-shrink-0"></i></a>
+                <div>
+                  <h4>Location:</h4>
+                  <p>VIT University, Vellore, TN - 632014</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <a href="mailto:sahayta@mail.com"><i class="bi bi-envelope flex-shrink-0"></i></a>
+                <div>
+                  <h4>Email:</h4>
+                  <p>sahayta@mail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <a href="tel:911"><i class="bi bi-phone flex-shrink-0"></i></a>
+                <div>
+                  <h4>Call:</h4>
+                  <p>+91 1234567890</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-clock flex-shrink-0"></i>
+                <div>
+                  <h4>Open Hours:</h4>
+                  <p>Mon-Sat: 11AM - 23PM</p>
+                </div>
+              </div><!-- End Info Item -->
+            </div>
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <select name="state" id="state" class="form-control" required>
+                  <option value="" disabled selected>Your State</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chandigarh">Chandigarh</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                  <option value="Daman and Diu">Daman and Diu</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Lakshadweep">Lakshadweep</option>
+                  <option value="Puducherry">Puducherry</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="West Bengal">West Bengal</option>
+                </select>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span>Sahayata<span style="color:#f85a40;">.</span></span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta
+            donna mare fermentum iaculis eu non diam phasellus.</p>
+          <!-- <div class="social-links d-flex mt-4">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div> -->
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Emergency Response</a></li>
+            <li><a href="#services">Fire Rescue</a></li>
+            <li><a href="#services">Medical Emergency Response</a></li>
+            <li><a href="#services">Police related Assistance</a></li>
+            <li><a href="#services">SOS Facility</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>
+            VIT University <br>
+            Katpadi, Vellore 632014<br>
+            India <br><br>
+            <strong>Phone:</strong> +91 1234567890 <br>
+            <strong>Email:</strong> sahayta@mail.com <br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Sahayata</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="#">AAKIAD</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script> 
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+  <script src="https://maps.google.com/maps/api/js?sensor=false"> </script>
+
+  <script type="text/javascript">
+    function getlocation() {
+      document.getElementById("currloc_div").style.display = "block";
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPos, showErr);
+      }
+      else {
+        alert("Sorry! your Browser does not support Geolocation API")
+      }
+    }
+    //Showing Current Poistion on Google Map  
+    function showPos(position) {
+      latt = position.coords.latitude;
+      long = position.coords.longitude;
+      var lattlong = new google.maps.LatLng(latt, long);
+      var myOptions = {
+        center: lattlong,
+        zoom: 15,
+        mapTypeControl: true,
+        navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+      }
+      var maps = new google.maps.Map(document.getElementById("currloc1"), myOptions);
+      var markers =
+        new google.maps.Marker({ position: lattlong, map: maps, title: "You are here!" });
+    }
+
+    //Handling Error and Rejection  
+    function showErr(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          alert("User denied the request for Geolocation API.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("USer location information is unavailable.");
+          break;
+        case error.TIMEOUT:
+          alert("The request to get user location timed out.");
+          break;
+        case error.UNKNOWN_ERROR:
+          alert("An unknown error occurred.");
+          break;
+      }
+    }        
+  </script>
+  <script>
+    const GetSpeech = () => {
+      console.log("clicked microphone");
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      document.getElementById("s2tdiv").style.display = "block";
+      let recognition = new SpeechRecognition();
+
+      recognition.onstart = () => {
+        console.log("starting listening, speak in microphone");
+        document.getElementById("s2t").value = "Started Listening.";
+        document.getElementById("s2t").style.backgroundColor = "green";
+        document.getElementById("s2t").style.color = "black";
+      }
+      recognition.onspeechend = () => {
+        document.getElementById("s2t").value = "Stopped Listening.";
+        document.getElementById("s2t").style.backgroundColor = "red";
+        document.getElementById("s2t").style.color = "black";
+        document.getElementById("s2ta").value += "\n";
+        recognition.stop();
+      }
+      recognition.onresult = (result) => {
+        console.log(result.results[0][0].transcript);
+        document.getElementById("s2ta").value += result.results[0][0].transcript;
+      }
+      recognition.start();
+    }
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

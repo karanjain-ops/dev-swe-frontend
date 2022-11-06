@@ -48,13 +48,11 @@
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="signin.html#header">Sign In</a></li>
-          <li class="dropdown" hidden><a href="#"><span>Username</span> <i
-                class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li id="nav_sign"><a href="signin.html#header">Sign In</a></li>
+          <li class="dropdown" id="nav_un" hidden><a href="#"><span id="us_name"></span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="#" data-toggle="modal" data-target="#profilemodal">Profile</a></li>
               <li><a href="emergency_list.html">My Emergencies</a></li>
-              <li><a href="#">Logout</a></li>
+              <li><a href="#" onclick="logout()">Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -88,11 +86,11 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-fire"></i></div>
-              <h4 class="title"><a href="" class="stretched-link" data-toggle="modal" data-target="#locmodal">Fire</a>
+              <h4 class="title"><a href="" class="stretched-link" data-toggle="modal" data-target="#locmodal" onclick="selectFire()">Fire</a>
               </h4>
             </div>
           </div>
-          <div class="modal fade" id="locmodal" tabindex="-1" role="dialog" aria-labelledby="locmodal"
+          <!-- <div class="modal fade" id="locmodal" tabindex="-1" role="dialog" aria-labelledby="locmodal"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -112,9 +110,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="modal fade" id="currloc" tabindex="-1" role="dialog" aria-labelledby="fireModal2"
+          <div class="modal fade" id="locmodal" tabindex="-1" role="dialog" aria-labelledby="locmodal"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -130,7 +128,7 @@
                   <div id="currloc_div" style="display: none;">
                     <div id="currloc1" style="width: 100%; height: 400px;"></div><br>
                     <input type="submit" value="Submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal"
-                      data-target="#s2tmodal" id="currloc2">
+                      data-target="#s2tmodal" id="currloc2" onclick="saveLoc()">
                   </div>
                 </div>
               </div>
@@ -158,7 +156,7 @@
             <div class="icon-box">
               <div class="icon"><i class="bi bi-heart-pulse"></i></div>
               <h4 class="title"><a href="" class="stretched-link" data-toggle="modal"
-                  data-target="#healthModal1">Health</a></h4>
+                  data-target="#healthModal1" onclick="selectHealth()">Health</a></h4>
             </div>
           </div>
           <div class="modal fade" id="healthModal1" tabindex="-1" role="dialog" aria-labelledby="healthModal1"
@@ -197,7 +195,7 @@
                   <br>
                   <form action="#">
                     <div class="serviceform">
-                      <select name="Type of Medical Emergency" id="Type of Medical Emergency" class="form-control"
+                      <select name="Type of Medical Emergency" id="TypeofMedicalEmergency" class="form-control"
                         required>
                         <option value="" disabled selected>Medical Emergency</option>
                         <option value="Traumatic Injury">Traumatic Injury</option>
@@ -208,11 +206,10 @@
                         <option value="Animal Attack">Animal Attack</option>
                         <option value="Seziure">Seziure</option>
                         <option value="Allegric Reaction">Allegric Reaction</option>
-                        <option value="Other">Other</option>
                       </select><br>
 
                       <input type="submit" value="Submit" class="btn btn-success" data-dismiss="modal"
-                        data-toggle="modal" data-target="#locmodal">
+                        data-toggle="modal" data-target="#locmodal" onclick="setHealthEmergency()">
                     </div>
                   </form>
                 </div>
@@ -260,19 +257,18 @@
                 <div class="modal-body">
                   <h4>Type of Complaint</h4>
                   <br>
-                  <form action="#">
+                  <form action="#" onsubmit="return false">
                     <div class="serviceform">
-                      <select name="Type of Crime" id="Type of Crime" class="form-control" required>
+                      <select name="Type of Crime" id="typeOfCrime" class="form-control" required>
                         <option value="" disabled selected>Complaint</option>
-                        <option value="Robbery/Theft">Robbery/Theft</option>
-                        <option value="Physical Abuse">Physical Abuse</option>
-                        <option value="Murder">Murder</option>
-                        <option value="Sexual Assualt">Sexual Assualt</option>
-                        <option value="Kidnapping">Kidnapping</option>
-                        <option value="Drugs Sale">Drugs Sale</option>
+                        <option value="ROBBERY">Robbery/Theft</option>
+                        <option value="ABUSE">Physical Abuse</option>
+                        <option value="MURDER">Murder</option>
+                        <option value="ASSAULT">Sexual Assualt</option>
+                        <option value="KIDNAPPING">Kidnapping</option>
+                        <option value="DRUGS">Drugs Sale</option>
                         <option value="DUI">DUI</option>
-                        <option value="Trespassing">Trespassing</option>
-                        <option value="Other">Other</option>
+                        <option value="TRESPASSING">Trespassing</option>
                       </select><br>
                       <div class="form-row">
                         <div class="form-group col-md-6">
@@ -287,7 +283,7 @@
                         </div><br>
                       </div>
                       <input type="submit" value="Submit" class="btn btn-success" data-dismiss="modal"
-                        data-toggle="modal" data-target="#locmodal">
+                        data-toggle="modal" data-target="#locmodal" onclick="resgisterCrime()">
                     </div>
                   </form>
                 </div>
@@ -297,7 +293,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-command"></i></div>
-              <h4 class="title"><a href="" data-toggle="modal" data-target="#sosmodal" class="stretched-link">SOS</a>
+              <h4 class="title"><a href="" data-toggle="modal" data-target="#sosmodal" class="stretched-link" onclick="selectSOS()">SOS</a>
               </h4>
             </div>
           </div>
@@ -338,11 +334,11 @@
                   <div id="s2tdiv" style="display: none;">
                     <br>
                     <input type="text" id="s2t" style="width: 100%;" disabled></label><br><br>
-                    <textarea id="s2ta" style="width: 100%; height: 200px;" placeholder=""></textarea>
+                    <textarea id="s2ta" style="width: 100%; height: 200px;"></textarea>
                   </div>
                   <br>
                   <input type="submit" value="Submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal"
-                    data-target="#finalmodal">
+                    data-target="#finalmodal" onclick="sendMessage()">
                 </div>
               </div>
             </div>
@@ -593,48 +589,7 @@
   <script src="https://maps.google.com/maps/api/js?sensor=false"> </script>
 
   <script type="text/javascript">
-    function getlocation() {
-      document.getElementById("currloc_div").style.display = "block";
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPos, showErr);
-      }
-      else {
-        alert("Sorry! your Browser does not support Geolocation API")
-      }
-    }
-    //Showing Current Poistion on Google Map  
-    function showPos(position) {
-      latt = position.coords.latitude;
-      long = position.coords.longitude;
-      var lattlong = new google.maps.LatLng(latt, long);
-      var myOptions = {
-        center: lattlong,
-        zoom: 15,
-        mapTypeControl: true,
-        navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
-      }
-      var maps = new google.maps.Map(document.getElementById("currloc1"), myOptions);
-      var markers =
-        new google.maps.Marker({ position: lattlong, map: maps, title: "You are here!" });
-    }
-
-    //Handling Error and Rejection  
-    function showErr(error) {
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          alert("User denied the request for Geolocation API.");
-          break;
-        case error.POSITION_UNAVAILABLE:
-          alert("USer location information is unavailable.");
-          break;
-        case error.TIMEOUT:
-          alert("The request to get user location timed out.");
-          break;
-        case error.UNKNOWN_ERROR:
-          alert("An unknown error occurred.");
-          break;
-      }
-    }        
+    
   </script>
   <script>
     const GetSpeech = () => {
@@ -664,6 +619,9 @@
     }
   </script>
   <script src="assets/js/main.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+  <script src="./app.js"></script>
 </body>
 
 </html>

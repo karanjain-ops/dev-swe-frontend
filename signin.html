@@ -7,7 +7,7 @@
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet">
@@ -49,9 +49,15 @@
             <ul>
               <li><a href="index.html#hero">Home</a></li>
               <li><a href="index.html#about">About Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#">Sign In</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+              <li id="nav_sign"><a href="#">Sign In</a></li>
+              <li class="dropdown" id="nav_un" hidden><a href="#"><span id="us_name"></span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="emergency_list.html">My Emergencies</a></li>
+                  <li><a href="#">Logout</a></li>
+                </ul>
+              </li>
             </ul>
           </nav>
           <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -78,29 +84,29 @@
           </form>
           <form class="sign-up-form" onsubmit="return false">
             <h2 class="title">Sign up</h2>
-            <div class="input-field" hidden id="nm">
+            <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Name" />
+              <input type="text" id="nm" placeholder="Name" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input type="email" id="sumail" placeholder="Email" />
             </div>
-            <div class="input-field" hidden id="ph">
+            <div class="input-field">
               <i class="bi bi-telephone-fill"></i>
-              <input type="tel" id="phone" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10"/>
+              <input type="tel" id="ph" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10"/>
             </div>
-            <div class="input-field" hidden id="add">
+            <div class="input-field">
               <i class="bi bi-geo-alt-fill"></i>
-              <input type="text" placeholder="Address" />
+              <input type="text" id="add" placeholder="Address" />
             </div>
-            <div class="input-field" hidden id="dob">
+            <div class="input-field">
               <i class="bi bi-calendar"></i>
-              <input type="text" placeholder="DOB" onfocus="(this.type='date')" />
+              <input type="text" id="dob" placeholder="DOB" onfocus="(this.type='date')" />
             </div>
-            <div class="input-field" hidden id="bg">
+            <div class="input-field" >
               <i class="bi bi-heart-pulse-fill"></i>
-              <input type="text" placeholder="Blood Group" />
+              <input type="text" id="bg" placeholder="Blood Group" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>

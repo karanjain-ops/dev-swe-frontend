@@ -70,7 +70,7 @@
         <div id="login-right">
         <div class="card col-md-8">
             <div class="card-body">
-            <form action="" method="post">
+            <form onsubmit="return false">
                 <div class="form-group">
                 <label for="username" class="control-label"><b>Username</b></label>
                 <input type="text" id="username" name="username" class="form-control">
@@ -79,7 +79,7 @@
                 <label for="password" class="control-label"><b>Password</b></label>
                 <input type="password" id="password" name="password" class="form-control">
                 </div>
-                <center><button type="submit" class="btn-sm btn-block btn-wave col-md-4 btn-primary">Login</button></center>
+                <center><button type="submit" onclick="login()" class="btn-sm btn-block btn-wave col-md-4 btn-primary">Login</button></center>
             </form>
             </div>
         </div>
@@ -92,5 +92,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>         
     <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+	<script src="main.js"></script>
 </body>
 </html>

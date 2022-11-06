@@ -49,9 +49,16 @@
                         <ul>
                             <li><a href="index.html#hero">Home</a></li>
                             <li><a href="index.html#about">About Us</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a href="#">Sign In</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li id="nav_sign"><a href="signin.html#header">Sign In</a></li>
+                            <li class="dropdown" id="nav_un" hidden><a href="#"><span id="us_name"></span><i
+                                        class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><a href="emergency_list.html">My Emergencies</a></li>
+                                    <li><a href="#">Logout</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                     <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -61,20 +68,20 @@
         </div>
     </div>
     <div id="ecd" style="margin-top: 125px; margin-bottom: 150px;">
-        <form class="sign-in-form">
+        <form class="sign-in-form" onsubmit="return false">
             <h2 class="title">Emergency Contact Details</h2>
-            <div class="input-field" id="nm">
+            <div class="input-field">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Contact's Name" required/>
+                <input id="enm" type="text" placeholder="Contact's Name" required />
             </div>
-            <div class="input-field" id="ph">
+            <div class="input-field">
                 <i class="bi bi-telephone-fill"></i>
-                <input type="tel" id="phone" name="phone" placeholder="Contact's Phone Number" pattern="[0-9]{10}"
-                    maxlength="10" required/>
+                <input type="tel" id="eph" name="phone" placeholder="Contact's Phone Number" pattern="[0-9]{10}"
+                    maxlength="10" required />
             </div>
-            <div class="input-field" id="add">
+            <div class="input-field" >
                 <i class="bi bi-geo-alt-fill"></i>
-                <input type="text" placeholder="Contact's Address" required/>
+                <input type="text" id="eadd" placeholder="Contact's Address" required />
             </div>
             <input type="submit" value="Get Started" class="btn-l solid" onclick="getEmergencyContact()" />
         </form>
@@ -160,6 +167,8 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>S
     <script src="assets/js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
     <script src="./app.js"></script>
 </body>
 

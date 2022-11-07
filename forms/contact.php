@@ -9,6 +9,7 @@
     $headers = "From: ".$mailFrom;
     if(mail($mailTo, $subject, $text, $headers)){
       echo "<script>alert(\"Message Sent!!\")</script>";
+      header("../index.html#contact");
     }
   }
 ?>

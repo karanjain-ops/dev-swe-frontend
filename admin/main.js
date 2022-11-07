@@ -24,7 +24,6 @@ window.addEventListener("load", ()=>{
   if(sessionStorage.getItem("loggedin")==null){
     sessionStorage.setItem("loggedin","0");
   }
-  console.log(sessionStorage.getItem("loggedin"))
   if(document.getElementById("userBody")){
     fetchUsers();
   }
@@ -47,7 +46,6 @@ showNavbar('header-toggle','nav-bar','body-pd','header')
 
 const fetchEmergencies = async() =>{
     document.getElementById("emergencyListBody").innerHTML="";
-    console.log("hi")
     const requestOptions = {
         method: 'GET',
         headers: { 'Content-Type': 'application/json','Access-Control-Allow-Origin': '*' },
@@ -67,8 +65,7 @@ const fetchEmergencies = async() =>{
                     }else{
                         row+="<td>Notified</td>"
                     }
-                    row+="<td><a href=\"#\" data-toggle=\"modal\" data-target=\"#details\" class=\"view\" title=\"View Details\"><i class=\"material-icons\">&#xE5C8;</i></a></td></tr>";
-                    document.getElementById("emergencyMessage").innerHTML=(data[i].extraInformation!=null)?data[i].extraInformation:""+"\n"+(data[i].emergncyMessage!=null)?data[i].emergncyMessage:"";
+                    row+="<td>"+data[i].extraInformation+"<br>"+data[i].emergencyMessage+"</td></tr>";
                     document.getElementById("emergencyListBody").innerHTML+=row;
                     document.getElementById("messageID").value=data[i].id;
                   }
@@ -84,7 +81,6 @@ const fetchEmergencies = async() =>{
 }
 
 const fetchUsers = async() =>{
-    console.log("hi")
     document.getElementById("userBody").innerHTML="";
     const requestOptions = {
         method: 'GET',
@@ -97,7 +93,6 @@ const fetchUsers = async() =>{
           .then(response => {
             response.json()
               .then(data => {
-                console.log(data)
                 for(i=0;i<data.length;i++){
                     var row="<tr><td>"+data[i].id+"</td><td>"+data[i].name+"</td><td>"+data[i].address+"</td><td>"+data[i].dateOfBirth+"</td><td>"+data[i].email+"</td><td>"+data[i].contactNumber+"</td></tr>";
                     document.getElementById("userBody").innerHTML+=row;
@@ -128,7 +123,6 @@ async function setStatus(){
         .then(response => {
           response.json()
             .then(data => {
-              console.log(data)
               fetchEmergencies()
             });
         })

@@ -8,8 +8,6 @@ window.addEventListener("load", () => {
     if (document.getElementById("NoEmergencies")) {
       fetchEmergenciesList();
     }
-    console.log(sessionStorage.getItem("token"));
-    console.log(username);
     document.getElementById('nav_sign').hidden = true;
     document.getElementById('nav_un').hidden = false;
     document.getElementById('us_name').innerHTML = username;
@@ -55,7 +53,6 @@ async function getMoreDetails() {
     const promise = await auth.createUserWithEmailAndPassword(email, password)
     var token = ""
     await auth.currentUser.getIdToken(true).then((idToken) => {
-      console.log(idToken)
       token = idToken
       sessionStorage.setItem("token", token);
     })
@@ -71,7 +68,6 @@ async function getMoreDetails() {
       .then(response => {
         response.json()
           .then(data => {
-            console.log(data)
             sessionStorage.setItem("username", data.name);
             document.getElementById('nav_sign').hidden = true;
             document.getElementById('nav_un').hidden = false;
@@ -93,7 +89,6 @@ const signIn = async () => {
     await auth.currentUser.getIdToken(true).then((idToken) => {
       token = idToken
       sessionStorage.setItem("token", token);
-      console.log(idToken)
     })
 
     const requestOptions = {
@@ -106,7 +101,6 @@ const signIn = async () => {
       .then(response => {
         response.json()
           .then(data => {
-            console.log(data)
             activate_un(data);
             window.location.href = "/index.html";
           });
@@ -137,7 +131,6 @@ const getEmergencyContact = async () => {
     const address = document.getElementById("eadd").value
     const contactNo = document.getElementById('eph').value;
     const data = { name, address, contactNo }
-    console.log(data)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': "Bearer " + token, 'Access-Control-Allow-Origin': '*' },
@@ -149,7 +142,6 @@ const getEmergencyContact = async () => {
       .then(response => {
         response.json()
           .then(data => {
-            console.log(data)
             window.location.href = "/index.html";
           });
       })
@@ -170,20 +162,17 @@ const resgisterCrime = async () => {
     const victimName = document.getElementById("victimName").value
     const victimAge = parseInt(document.getElementById("victimAge").value);
     const data = { crimeCategory, victimName, victimAge }
-    console.log(data)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': "Bearer " + token, 'Access-Control-Allow-Origin': '*' },
       mode: "cors",
       body: JSON.stringify(data)
     };
-    console.log(requestOptions)
     await fetch(
       'https://dev-swe-sahayata.herokuapp.com/police', requestOptions)
       .then(response => {
         response.json()
           .then(data => {
-            console.log(data)
           });
       })
   }
@@ -240,7 +229,6 @@ function showErr(error) {
 async function saveLoc() {
   const pos = sessionStorage.getItem("loc");
   const data = { pos }
-  console.log(data)
   // const requestOptions = {
   //   method: 'POST',
   //   headers: { 'Content-Type': 'application/json', 'Authorization': "Bearer " + token, 'Access-Control-Allow-Origin': '*' },
@@ -326,20 +314,17 @@ async function sendMessage() {
     const location = sessionStorage.getItem("loc");
     const extraInformation = sessionStorage.getItem("typeofhealthemergency");
     const data = { emergencyMessage, location, extraInformation, emergencyType };
-    console.log(data)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': "Bearer " + token, 'Access-Control-Allow-Origin': '*' },
       mode: "cors",
       body: JSON.stringify(data)
     };
-    console.log(requestOptions)
     await fetch(
       'https://dev-swe-sahayata.herokuapp.com/messages', requestOptions)
       .then(response => {
         response.json()
           .then(data => {
-            console.log(data)
           });
       })
   }
@@ -357,7 +342,6 @@ function logout() {
 async function fetchEmergenciesList() {
   try {
     document.getElementById("emergencyListBody").innerHTML = "";
-    console.log("hi")
     const requestOptions = {
       method: 'GET',
       headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
@@ -368,8 +352,7 @@ async function fetchEmergenciesList() {
       .then(response => {
         response.json()
           .then(data => {
-            console.log(data)
-            j = 0
+            var j = 0
             for (i = 0; i < data.length; i++) {
               if (data[i].user.name == sessionStorage.getItem("username")) {
                 var row = "<tr><td>" + ++j + "</td><td>" + data[i].location + "</td><td>" + data[i].emergencyType + "</td><td>" + data[i].extraInformation + " " + data[i].emergencyMessage + "</td><td>" + data[i].createdAt.substring(0, 20) + "</td>";

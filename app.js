@@ -372,7 +372,7 @@ async function fetchEmergenciesList() {
             j = 0
             for (i = 0; i < data.length; i++) {
               if (data[i].user.name == sessionStorage.getItem("username")) {
-                var row = "<tr><td>" + ++j + "</td><td>" + data[i].location + "</td><td>" + data[i].emergencyType + "</td><td>" + (data[i].extraInformation + " " + data[i].emergencyMessage + "</td><td>" + data[i].createdAt.substring(0, 20) + "</td>";
+                var row = "<tr><td>" + ++j + "</td><td>" + data[i].location + "</td><td>" + data[i].emergencyType + "</td><td>" + data[i].extraInformation + " " + data[i].emergencyMessage + "</td><td>" + data[i].createdAt.substring(0, 20) + "</td>";
                 if (data[i].notified == "FALSE") {
                   row += "<td>Yet To Notify</td>";
                 } else {

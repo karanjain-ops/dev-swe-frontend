@@ -74,11 +74,11 @@
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="text" placeholder="Email" id="simail" />
+              <input type="text" placeholder="Email" id="simail" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" id="sipassword"/>
+              <input type="password" placeholder="Password" minlength="6" id="sipassword" required/>
             </div>
             <input type="submit" value="Login" class="btn-l solid" onclick="signIn()"/>
           </form>
@@ -86,31 +86,31 @@
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" id="nm" placeholder="Name" />
+              <input type="text" id="nm" placeholder="Name" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" id="sumail" placeholder="Email" />
+              <input type="email" id="sumail" placeholder="Email" required/>
             </div>
             <div class="input-field">
               <i class="bi bi-telephone-fill"></i>
-              <input type="tel" id="ph" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10"/>
+              <input type="tel" id="ph" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10" required/>
             </div>
             <div class="input-field">
               <i class="bi bi-geo-alt-fill"></i>
-              <input type="text" id="add" placeholder="Address" />
+              <input type="text" id="add" placeholder="Address" required/>
             </div>
             <div class="input-field">
               <i class="bi bi-calendar"></i>
-              <input type="text" id="dob" placeholder="DOB" onfocus="(this.type='date')" />
+              <input type="text" id="dob" placeholder="DOB" onfocus="(this.type='date')" required />
             </div>
             <div class="input-field" >
               <i class="bi bi-heart-pulse-fill"></i>
-              <input type="text" id="bg" placeholder="Blood Group" />
+              <input type="text" id="bg" placeholder="Blood Group" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" id="supassword" placeholder="Password" />
+              <input type="password" id="supassword" placeholder="Password" minlength="6" required/>
             </div>
             <input type="submit" class="btn-l" value="Sign up" onclick="getMoreDetails()"/>
           </form>

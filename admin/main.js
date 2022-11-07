@@ -20,10 +20,27 @@ const showNavbar = (toggleId, navId, bodyId, headerId) =>{
     }
 }
 
-window.addEventListener("DOMContentLoaded", ()=>{
-        fetchUsers();
-        fetchEmergencies();
-        sessionStorage.clear()
+window.addEventListener("load", ()=>{
+  if(sessionStorage.getItem("loggedin")==null){
+    sessionStorage.setItem("loggedin","0");
+  }
+  console.log(sessionStorage.getItem("loggedin"))
+  if(document.getElementById("userBody")){
+    fetchUsers();
+  }
+  if(document.getElementById("NoEmergencies")){
+    fetchEmergencies();
+  }
+  if(sessionStorage.getItem("loggedin")=="0"){
+    if(!document.getElementById("username")){
+      window.location.href="./signin.html";
+    }
+  }
+  if(sessionStorage.getItem("loggedin")=="1"){
+    if(document.getElementById("username")){
+      sessionStorage.clear();
+    }
+  }
 });
 
 showNavbar('header-toggle','nav-bar','body-pd','header')
@@ -125,6 +142,11 @@ function login(){
     const username=document.getElementById('username').value;
     const password=document.getElementById('password').value;
     if(username=="admin" && password=="admin"){
+        sessionStorage.setItem("loggedin","1");
         window.location.href="./index.html";
+    }
+    else{
+      sessionStorage.setItem("loggedin","0");
+      alert("Invalid Credentials!!")
     }
 }

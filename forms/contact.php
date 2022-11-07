@@ -5,9 +5,10 @@
     $mailFrom = $_POST['email'];
     $state=$_POST['state'];
     $message=$state. "\n". $_POST['message'];
-    $mailTo="jkaran225@gmail.com";
+    $mailTo="jainkaran225@gmail.com";
     $headers = "From: ".$mailFrom;
-    mail($mailTo, $subject, $text, $headers);
-    echo "<script>alert(\"Message Sent!!\")</script>";
+    if(mail($mailTo, $subject, $text, $headers)){
+      echo "<script>alert(\"Message Sent!!\")</script>";
+    }
   }
 ?>

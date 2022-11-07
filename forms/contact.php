@@ -9,7 +9,7 @@
     $headers = "From: ".$mailFrom;
     if(mail($mailTo, $subject, $text, $headers)){
       echo "<script>alert(\"Message Sent!!\")</script>";
-      header("Location:../index.html#contact");
-    }
+      header("Location:https://sahayata-swe.herokuapp.com/index.html#contact");
+    } 
   }
 ?>

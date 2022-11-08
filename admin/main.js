@@ -57,9 +57,9 @@ const fetchEmergencies = async() =>{
           .then(response => {
             response.json()
               .then(data => {
-                console.log(data)
                 for(i=0;i<data.length;i++){
-                    var row="<tr><td>"+data[i].id+"</td><td>"+data[i].userId+"</td><td>"+data[i].location+"</td><td>"+data[i].user.contactNumber+"\n"+data[i].user.email+"</td><td>"+data[i].emergencyType+"</td><td>"+data[i].createdAt+"</td>";
+                    var date = new Date(data[i].createdAt)
+                    var row="<tr><td>"+data[i].id+"</td><td>"+data[i].userId+"</td><td>"+data[i].location+"</td><td>"+data[i].user.contactNumber+"\n"+data[i].user.email+"</td><td>"+data[i].emergencyType+"</td><td>"+date.toLocaleDateString()+"\n"+date.toLocaleTimeString()+"</td>";
                     if(data[i].notified=="FALSE"){
                         row+="<td><a href=\"#\" data-toggle=\"modal\" data-target=\"#emergencyStatus\" class=\"view\"><i class=\"material-icons\">&#xE5C8;</i></a></td>";
                     }else{
@@ -94,7 +94,7 @@ const fetchUsers = async() =>{
             response.json()
               .then(data => {
                 for(i=0;i<data.length;i++){
-                    var row="<tr><td>"+data[i].id+"</td><td>"+data[i].name+"</td><td>"+data[i].address+"</td><td>"+data[i].dateOfBirth+"</td><td>"+data[i].email+"</td><td>"+data[i].contactNumber+"</td></tr>";
+                    var row="<tr><td>"+data[i].id+"</td><td>"+data[i].name+"</td><td>"+data[i].address+"</td><td>"+(data[i].dateOfBirth+"").split("T")[0]+"</td><td>"+data[i].email+"</td><td>"+data[i].contactNumber+"</td></tr>";
                     document.getElementById("userBody").innerHTML+=row;
                   }
                   if(data.length==0){
